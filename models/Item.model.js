@@ -1,40 +1,40 @@
 const { Schema, model } = require("mongoose");
 
-const userItem = new Schema(
+const itemSchema = new Schema(
     {
-      productType: {
-        type: String,
-        required: true        
-      },   
-      productBrand: {
-        type: String,
-        required:true
-      },
-      productName: {
-        type: String,
-        required: true
-      },
-      purchaseDate: {
-        type: Date,
-        required: true
-      },
-      price: {
-        type: Number,
-        required:true
-      },
-      warranty: {
-        type: Schema.Types.ObjectId,
-        ref: 'Warranty',
-        required: true
-      },
-      invoice: [{
-        type: String
-      }]
+        owner: {
+            type: Schema.Types.ObjectId,
+            ref: "User",
+            required: true,
+        },
+        category: {
+            type: String,
+            required: true
+        },
+        brand: {
+            type: String,
+            required: true
+        },
+        name: {
+            type: String,
+            required: true
+        },
+        purchaseDate: {
+            type: Date,
+            required: true
+        },
+        price: {
+            type: Number,
+            required: true
+        },
+        invoiceImg: [{
+            type: String
+        }]
     },
     {
         timestamps: true
     }
 )
-const Item = model("User", userItem);
+const Item = model("Item", itemSchema);
 
 module.exports = Item;
