@@ -2,10 +2,27 @@ const { Schema, model } = require("mongoose");
 
 const warrantySchema = new Schema(
     {
-        builderWarranty: Number,
-        sellerWarranty: Number,
-        paymentWarranty: Number,
-        insuranceWarranty: Number,
+        product: {
+            type: Schema.Types.ObjectId,
+            ref: "Item",
+            required: true
+        },
+        warrantyType: {
+            type: String,
+            enum: ["builder", "seller", "payment", "insurance"],
+            required: true
+        },
+        durationInMonths: {
+            type: Number,
+            required: true
+        },
+        provider: {
+            type: String,
+            required: true,
+        },
+        policyImg: {
+            type: String,
+        }
     },
     {
         // this second object adds extra properties: `createdAt` and `updatedAt`    
