@@ -7,7 +7,7 @@ router.get("/", (req, res, next) => {
 });
 
 router.use('/', require('./items.routes'))
-router.use('/', require('./user.routes'))
-router.use('/', require('./warranty.routes'))
+// router.use('/', require('./users.routes'))
+// router.use('/', require('./warranties.routes'))
 
 module.exports = router;

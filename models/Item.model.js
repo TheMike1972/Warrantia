@@ -15,7 +15,7 @@ const userItem = new Schema(
         required: true
       },
       purchaseDate: {
-        type: date,
+        type: Date,
         required: true
       },
       price: {
@@ -32,7 +32,6 @@ const userItem = new Schema(
       }]
     },
     {
-        // this second object adds extra properties: `createdAt` and `updatedAt`    
         timestamps: true
     }
 )
