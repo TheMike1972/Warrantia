@@ -1,0 +1,66 @@
+[
+    {
+        "owner": "John",
+        "category": "phone",
+        "brand": "Apple",
+        "name": "iPhone10",
+        "purchaseDate": "2020-10-14",
+        "price": 500
+    },
+    {
+        "owner": "John",
+        "category": "camera",
+        "brand": "Canon",
+        "name": "powershot50 G5X mark2",
+        "purchaseDate": "2019-03-26",
+        "price": 900
+    },
+    {
+        "owner": "Marcel",
+        "category": "washing machine",
+        "brand": "Bosch",
+        "name": "WAN 28228 FF",
+        "purchaseDate": "2017-04-28",
+        "price": 850
+    },
+    {
+        "owner": "Marcel",
+        "category": "coffee maker",
+        "brand": "Krups",
+        "name": "Nespresso Inissia",
+        "purchaseDate": "2021-06-05",
+        "price": 90
+    },
+    {
+        "owner": "Robert",
+        "category": "cd player",
+        "brand": "Cambridge",
+        "name": "CXC",
+        "purchaseDate": "2010-08-08",
+        "price": 600
+    },
+    {
+        "owner": "Robert",
+        "category": "drill",
+        "brand": "Black&Decker",
+        "name": "BEH850KA32-QS",
+        "purchaseDate": "2023-02-18",
+        "price": 85
+    },
+    {
+        "owner": "Marie",
+        "category": "hairstraightner",
+        "brand": "Babyliss",
+        "name": "ST841E",
+        "purchaseDate": "2022-01-13",
+        "price": 60
+    },
+    {
+        "owner": "Marie",
+        "category": "speaker",
+        "brand": "JBL",
+        "name": "Xtreme2",
+        "purchaseDate": "2018-01-05",
+        "price": 170
+    }
+]

@@ -4,7 +4,7 @@ const Warranty = require("../models/Warranty.model");
 const Item = require("../models/Item.model");
 
 
-router.get("/user/userId/create-item/create-warranty", async (req, res, next) => {
+router.get("/user/:userId/create-item/create-warranty", async (req, res, next) => {
     try {
         const allWarranties = await Warranty.find();
         res.render("/user/userId", { allWarranties });

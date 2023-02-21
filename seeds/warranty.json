@@ -1,0 +1,98 @@
+[
+    {
+       "product": "iPhone10",
+       "warrantyType": "builder",
+       "durationInMonths": 24,
+       "provider": "Apple"
+    },
+    {
+        "product": "iPhone10",
+        "warrantyType": "seller",
+        "durationInMonths": 24,
+        "provider": "Darty"
+    },
+{
+        "product": "powershot50 G5X mark2",
+        "warrantyType": "builder",
+        "durationInMonths": 12,
+        "provider": "Canon"
+    },
+    {
+        "product": "powershot50 G5X mark2",
+        "warrantyType": "payment",
+        "durationInMonths": 12,
+        "provider": "Visa"
+    },
+    {
+        "product": "WAN 28228 FF",
+        "warrantyType": "builder",
+        "durationInMonths": 48,
+        "provider": "Bosch"
+    },
+    {
+        "product": "WAN 28228 FF",
+        "warrantyType": "insurance",
+        "durationInMonths": 36,
+        "provider": "MAIF"
+    },
+    {
+        "product": "Nespresso Inissia",
+        "warrantyType": "builder",
+        "durationInMonths": 12,
+        "provider": "Krups"
+    },
+    {
+        "product": "Nespresso Inissia",
+        "warrantyType": "seller",
+        "durationInMonths": 24,
+        "provider": "Amazon"
+    },
+    {
+        "product": "CXC",
+        "warrantyType": "builder",
+        "durationInMonths": 24,
+        "provider": "Cambridge"
+    },
+    {
+        "product": "CXC",
+        "warrantyType": "payment",
+        "durationInMonths": 12,
+        "provider": "American Express"
+    },
+    {
+        "product": "BEH850KA32-QS",
+        "warrantyType": "builder",
+        "durationInMonths": 12,
+        "provider": "Black&Decker"
+    },
+    {
+        "product": "BEH850KA32-QS",
+        "warrantyType": "seller",
+        "durationInMonths": 24,
+        "provider": "Leroy Merlin"
+    },
+    {
+        "product": "ST841E",
+        "warrantyType": "builder",
+        "durationInMonths": 6,
+        "provider": "Babyliss"
+    },
+    {
+        "product": "ST841E",
+        "warrantyType": "seller",
+        "durationInMonths": 6,
+        "provider": "Monoprix"
+    },
+    {
+        "product": "Xtreme2",
+        "warrantyType": "seller",
+        "durationInMonths": 6,
+        "provider": "Cashexpress"
+    },
+    {
+        "product": "Xtreme2",
+        "warrantyType": "payment",
+        "durationInMonths": 12,
+        "provider": "Mastercard"
+    }
+]
