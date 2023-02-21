@@ -4,28 +4,28 @@ const Warranty = require("../models/Warranty.model");
 const Item = require("../models/Item.model");
 
 
-router.get("/user/:userId/create-item/create-warranty", async (req, res, next) => {
+router.get("/item/:itemId/create-warranty", async (req, res, next) => {
     try {
         const allWarranties = await Warranty.find();
-        res.render("/user/userId", { allWarranties });
+        res.render("/:itemID", { allWarranties });
     } catch (error) {
         next(error);
     }
 });
 
-router.post("/user/userId/create-item/create-warranty", async (req, res, next) => {
+router.post("/item/:itemId/create-warranty", async (req, res, next) => {
     try {
         const { builderWarranty, sellerWarranty, paymentWarranty, insuranceWarranty } = req.body;
 
         await Warranty.create({ builderWarranty, sellerWarranty, paymentWarranty, insuranceWarranty });
-        res.redirect("/user/userId");
+        res.redirect("/:itemId");
     } catch (error) {
         next(error);
     }
 });
 
 
-router.get("/user/userId/itemID/editItem/editWarranty", async (req, res, next) => {
+router.get("/item/:itemId/edit-item/edit-warranty", async (req, res, next) => {
     try {
         const oneWarranty = await Warranty.findById(req.params.id);
         const allItems = await Item.find();
@@ -40,21 +40,31 @@ router.get("/user/userId/itemID/editItem/editWarranty", async (req, res, next) =
                 }
             });
         });
-        res.render("/user/userId/itemID/editItem/editWarranty", { allItems: mappedItems, oneWarranty });
+        res.render("/item/:itemId", { allItems: mappedItems, oneWarranty });
     } catch (error) {
         next(error);
     }
 });
 
-router.post("/user/userId/itemID/editItem/editWarranty", async (req, res, next) => {
+router.post("/item/:itemId/edit-item/edit-warranty", async (req, res, next) => {
     try {
         const { builderWarranty, sellerWarranty, paymentWarranty, insuranceWarranty } = req.body;
 
         await Warranty.findByIdAndUpdate(req.params.id, { builderWarranty, sellerWarranty, paymentWarranty, insuranceWarranty });
-        res.redirect("/user/userId");
+        res.redirect("/itemId");
     } catch (error) {
         next(error);
     }
 });
+
+router.post('/item/itemId/edit-item/edit-warranty', async (req, res, next) => {
+    try {
+        await Warranty.findByIdAndDelete(req.params.warrantyId)
+        res.redirect('/item/:itemId/edit-item')
+    } catch (error) {
+        next(error)
+    }
+})
+
 
 module.exports = router;
