@@ -29,6 +29,7 @@ router.post('/create', async (req, res, next) => {
 });
 
 router.get('/:id', async (req, res, next) => {
+    console.log('in thqt route')
     try {
         const oneItem = await Item.find({_id: req.params.id, owner: req.session.currentUser._id});
         res.render('item/item-details', {oneItem});
