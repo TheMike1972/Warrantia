@@ -23,7 +23,8 @@ const capitalize = require("./utils/capitalize");
 const projectName = "Project-2";
 
 app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
-
+const {exposeUserToView} = require('./middleware/route-guard')
+app.use(exposeUserToView)
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
