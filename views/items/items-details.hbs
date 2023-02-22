@@ -1,0 +1,18 @@
+<h2>Product details</h2>
+
+<div>
+  {{#each items}}
+    <p>{{category}}</p>
+    <p>{{brand}}</p>
+    <p>{{name}}</p>
+    <p>{{purchaseDate}}</p>
+    <p>{{price}}</p>
+  
+
+  {{/each}}
+  {{items._id}}
+  <form action='/items/{{items._id}}/delete' method='post'>
+    <button>Delete this product</button>
+  </form>
+  <a href='/items/{{items._id}}/edit'>edit</a>
+</div>
