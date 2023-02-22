@@ -1,10 +1,9 @@
 <h2>New  warranty</h2>
 
-<form action="/warranty/create" method="post">
+<form action="/{{oneItem._id}}/create-warranty" method="post">
 
-    <label for="product">{{item.name}}</label>
-    <input type="text" id="product" name="product">
-
+<h2>{{oneItem.name}}</h2>
+   
 <div>
     <label for="warrantyType">Warranty type</label>
     <select name='warrantyType' id='warrantyType'>

@@ -2,6 +2,11 @@ const { Schema, model } = require("mongoose");
 
 const warrantySchema = new Schema(
     {
+        creator: {
+            type: Schema.Types.ObjectId,
+            ref: "User",
+            required: true,
+        },
         product: {
             type: Schema.Types.ObjectId,
             ref: "Item",
