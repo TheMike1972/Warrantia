@@ -8,19 +8,19 @@ const warrantyExpirationDate = require('../public/js/expiration-date')
 
 router.get("/:itemId/create-warranty", async (req, res, next) => {
     try {
-        const allItems = await Item.find();
-        res.render("/warranties/new-warranty", { allItems });
+        const oneItem = await Item.findOne({ _id: req.params.itemId, owner: req.session.currentUser._id });
+        res.render("warranty/new-warranty", { oneItem });
     } catch (error) {
         next(error);
     }
 });
 
 router.post("/:itemId/create-warranty", async (req, res, next) => {
-    const { product, warrantyType, durationInMonths, provider, policyImg } = req.body;
+    const { warrantyType, durationInMonths, provider, policyImg } = req.body;
     try {
-        await Warranty.create({ product, warrantyType, durationInMonths, provider, policyImg });
+        await Warranty.create({ product: req.params.itemId, creator: req.session.currentUser._id, warrantyType, durationInMonths, provider, policyImg });
         // await warrantyExpirationDate(req.params.itemId)
-        res.redirect("/:itemId");
+        res.redirect(`/items/${req.params.itemId}`);
     } catch (error) {
         next(error);
     }
@@ -29,43 +29,30 @@ router.post("/:itemId/create-warranty", async (req, res, next) => {
 // to read
 router.get('/:id', async (req, res, next) => {
     try {
-        const warrantyDetails = await Warranty.findOne({ _id: req.params.id }).populate('product');
-        res.render('/warranty/warranty-details', { warrantyDetails });
-        //res.send({ movieDetails });
+        const warrantyDetails = await Warranty.findOne({ _id: req.params.id, creator: req.session.currentUser._id }).populate('product');
+        res.render('warranty/warranty-details', { warrantyDetails });
     } catch (error) {
         next(error);
     }
 });
 
-// pour l'édition
+// to modify warranty
 
-router.get("/items/:itemId/edit-item/edit-warranty", async (req, res, next) => {
+router.get("/:warrantyId/edit-warranty", async (req, res, next) => {
     try {
-        const oneWarranty = await Warranty.findById(req.params.id);
-        const allItems = await Item.find();
-
-        // mongoose stores the actual document inside document._doc, and only allows us to access it through a getter function. this is a hacky way to retrieve the actual document and edit it
-        const mappedItems = allItemss.map(it => it._doc);
-
-        mappedItems.forEach(it => {
-            oneWarranty.forEach(acqui => {
-                if (it._id.equals(acqui._id)) {
-                    it.isSelected = true;
-                }
-            });
-        });
-        res.render("/item/:itemId", { allItems: mappedItems, oneWarranty });
+        const oneWarranty = await Warranty.findOne({ _id: req.params.warrantyId, creator: req.session.currentUser._id }).populate('product');
+        res.render('warranty/edit-warranty', { oneWarranty });
     } catch (error) {
         next(error);
     }
 });
 
-router.post("/item/:itemId/edit-item/edit-warranty", async (req, res, next) => {
+router.post("/:warrantyId/edit-warranty", async (req, res, next) => {
     try {
-        const { product, warrantyType, durationInMonths, provider, policyImg } = req.body;
+        const { warrantyType, durationInMonths, provider, policyImg } = req.body;
 
-        await Warranty.findByIdAndUpdate(req.params.id, { product, warrantyType, durationInMonths, provider, policyImg });
-        res.redirect("/item/itemId");
+        const updatedItem = await Warranty.findOneAndUpdate({ _id: req.params.warrantyId, creator: req.session.currentUser._id }, { warrantyType, durationInMonths, provider, policyImg });
+        res.redirect(`/items/${updatedItem._id}`);
     } catch (error) {
         next(error);
     }
@@ -73,10 +60,10 @@ router.post("/item/:itemId/edit-item/edit-warranty", async (req, res, next) => {
 
 // to delete
 
-router.post('/:itemId/edit-warranty', async (req, res, next) => {
+router.post('/:warrantyId/delete', async (req, res, next) => {
     try {
-        await Warranty.findByIdAndDelete(req.params.warrantyId)
-        res.redirect('/:itemId/edit-item')
+        await Warranty.findOneAndDelete({ _id: req.params.warrantyId, creator: req.session.currentUser._id })
+        res.redirect('/items')
     } catch (error) {
         next(error)
     }

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {isLoggedIn} = require('./../middleware/route-guard')
+const { isLoggedIn } = require('./../middleware/route-guard')
 
 /* GET home page */
 router.get("/", (req, res, next) => {
@@ -12,6 +12,6 @@ router.use(isLoggedIn)
 
 router.use('/items', require('./items.routes'))
 router.use('/profile', require('./users.routes'))
-// router.use('/', require('./warranties.routes'))
+router.use('/', require('./warranties.routes'))
 
 module.exports = router;
