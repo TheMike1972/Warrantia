@@ -1,14 +1,14 @@
 const router = require('express').Router();
 const Item = require('../models/Item.model');
 
-router.get('/', async (req, res, next) => {
-    try {
-        const allItems = await Item.find();
-        res.render('item/item', { allItems });
-    } catch (error) {
-        next(error);
-    }
-});
+// router.get('/', async (req, res, next) => {
+//     try {
+//         const allItems = await Item.find();
+//         res.render('item/item', { allItems });
+//     } catch (error) {
+//         next(error);
+//     }
+// });
 
 router.get('/item/:itemId/create', (req, res, next) => {
     try {
@@ -28,11 +28,12 @@ router.post('/item/:itemId/create', async (req, res, next) => {
     }
 });
 
+
 router.get('/:itemId', async (req, res, next) => {
     console.log('in that route')
     try {
-        const oneItem = await Item.find({_id: req.params.id, owner: req.session.currentUser._id});
-        res.render('item/item-details', {oneItem});
+        const oneItem = await Item.find({ _id: req.params.id, owner: req.session.currentUser._id });
+        res.render('item/item-details', { oneItem });
     } catch (error) {
         next(error)
     }
