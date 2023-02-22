@@ -1,11 +1,11 @@
 <h2>Edit your warranty</h2>
 
 <h2>{{warranties.product}}</h2>
-<form action="/edit-warranty" method="post">
-   
+
 {{#each warranties}}
-<p>{{this}}</p>
-<div>
+<form action="/warranty/{{this._id}}/edit" method="post">
+  <p>{{this}}</p>
+  <div>
     <label for="warrantyType-update">Warranty type</label>
     <select name='warrantyType' id='warrantyType-update'>
       <option value='builder'>builder</option>
@@ -14,18 +14,23 @@
       <option value='insurance'>insurance</option>
     </select>
   </div>
-    
 
-    <label for="durationInMonths-update">Warranty duration in months</label>
-    <input type="number"name="durationInMonths" id="durationInMonths-update" ></input>
 
-    <label for="provider-update">provider</label>
-    <input type="text" id="provider-update" name="provider">
+  <label for="durationInMonths-update">Warranty duration in months</label>
+  <input type="number" name="durationInMonths" id="durationInMonths-update"></input>
 
-    <label for="policyImg-update">warranty extra document</label>
-    <input type="text" id="policyImg-update" name="policyImg">
+  <label for="provider-update">provider</label>
+  <input type="text" id="provider-update" name="provider">
 
-    {{/each}}
+  <label for="policyImg-update">warranty extra document</label>
+  <input type="text" id="policyImg-update" name="policyImg">
 
-    <button id="warranty-update">Update your warranty</button>
+
+  <button id="warranty-update">Update your warranty</button>
+
 </form>
+
+<form action='/warranty/{{this._id}}/delete' method='post'>
+  <button>Delete this warranty</button>
+</form>
+{{/each}}
