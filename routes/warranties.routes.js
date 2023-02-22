@@ -50,12 +50,12 @@ router.get("/:itemId/edit-warranty", async (req, res, next) => {
     }
 });
 
-router.post("/:warrantyId/edit-warranty", async (req, res, next) => {
+router.post("/:warrantyId/edit", async (req, res, next) => {
     try {
         const { warrantyType, durationInMonths, provider, policyImg } = req.body;
 
         const updatedItem = await Warranty.findOneAndUpdate({ _id: req.params.warrantyId, creator: req.session.currentUser._id }, { warrantyType, durationInMonths, provider, policyImg });
-        res.redirect(`/items/${updatedItem._id}`);
+        res.redirect(`/items/${updatedItem.product._id}`);
     } catch (error) {
         next(error);
     }
@@ -66,7 +66,7 @@ router.post("/:warrantyId/edit-warranty", async (req, res, next) => {
 router.post('/:warrantyId/delete', async (req, res, next) => {
     try {
         await Warranty.findOneAndDelete({ _id: req.params.warrantyId, creator: req.session.currentUser._id })
-        res.redirect('/items')
+        res.render('items')
     } catch (error) {
         next(error)
     }

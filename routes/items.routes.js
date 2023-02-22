@@ -35,7 +35,8 @@ router.get('/:itemId', async (req, res, next) => {
     console.log('in that route')
     try {
         const oneItem = await Item.findOne({ _id: req.params.itemId, owner: req.session.currentUser._id });
-        res.render('items/items-details', { items: oneItem });
+        console.log(oneItem)
+        res.render('items/items-details', { oneItem });
     } catch (error) {
         next(error)
     }
@@ -44,6 +45,8 @@ router.get('/:itemId', async (req, res, next) => {
 router.get('/:itemId/edit', async (req, res, next) => {
     try {
         const itemToUpdate = await Item.findOne({ _id: req.params.itemId, owner: req.session.currentUser._id });
+        console.log(itemToUpdate.purchaseDate)
+        itemToUpdate._doc.purchaseDate = itemToUpdate.purchaseDate.toISOString().split("T")[0]
         res.render('items/edit-items', { itemToUpdate })
     } catch (error) {
         next(error)
@@ -52,6 +55,7 @@ router.get('/:itemId/edit', async (req, res, next) => {
 
 router.post('/:itemId/edit', async (req, res, next) => {
     try {
+        console.log('hello')
         const { category, brand, name, purchaseDate, price, invoiceImg } = req.body;
         const updatedItem = await Item.findOneAndUpdate({ _id: req.params.itemId, owner: req.session.currentUser._id }, { category, brand, name, purchaseDate, price, invoiceImg });
         if (updatedItem) {

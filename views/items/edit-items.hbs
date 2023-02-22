@@ -1,24 +1,26 @@
 <h2>Edit product</h2>
 
-<form action='/items/{{item._id}}' method='post'>
+<form action='/items/{{itemToUpdate._id}}/edit' method='post'>
   <label for="category">Category</label>
-  <input type='text' name='category' value='{{item.category}}'/>
+
+  <input type='text' name='category' value='{{itemToUpdate.category}}' />
   
   <label for="brand">Brand</label>
-  <input type='text' name='brand' value='{{item.brand}}'/>
+  <input type='text' name='brand' value='{{itemToUpdate.brand}}' />
 
   <label for="name">Name</label>
-  <input type='text' name='name' value='{{item.name}}'/>
+  <input type='text' name='name' value='{{itemToUpdate.name}}' />
 
   <label for="purchaseDate">Purchase date</label>
-  <input type="date" name="purchaseDate" value="{{item.purchaseDate}}"/>
+  {{log itemToUpdate.purchaseDate}}
+  <input type="date" name="purchaseDate" value="{{itemToUpdate.purchaseDate}}">
 
   <label for="price">Purchase price</label>
-  <input type="price" name="price" value="{{item.price}}"/>
+  <input type="price" name="price" value="{{itemToUpdate.price}}">
 
 
   <button>submit</button>
-  <a href='/warranty/{{item._id}}/edit-warranty'>Edit warranty</a>
+  <a href='/warranty/{{itemToUpdate._id}}/edit-warranty'>Edit warranties</a>
 
 
 </form
