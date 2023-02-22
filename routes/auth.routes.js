@@ -62,15 +62,16 @@ router.post('/login', (req, res, next) => {
 });
 
 
-
-router.get('/signup', isLoggedOut, (req, res, next) => {
-  res.render('auth/signup')
-})
-
+  router.get('/signup', isLoggedOut, (req, res, next) => {
+    res.render('auth/signup')
+  })
+   
 router.get('/logout', (req, res, next) => {
-  req.session.destroy(err => {
-    if (err) next(err);
-    res.redirect('/auth/login');
+    req.session.destroy(err => {
+      if (err) next(err);
+      res.redirect('/login');
+    });
+
   });
 });
 

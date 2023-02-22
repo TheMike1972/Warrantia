@@ -1,0 +1,12 @@
+<h2>Edit product</h2>
+
+<form action='/item/{{item._id}}' method='post'>
+  <input type='text' name='category' value='{{item.category}}' />
+  <input type='text' name='brand' value='{{item.brand}}' />
+  <input type='text' name='name' value='{{item.name}}' />
+  <input type="date" name="purchaseDate" value="{{item.purchaseDate}}">
+  <input type="price" name="price" value="{{item.price}}">
+  
+
+  <button>submit</button>
+</form
