@@ -3,6 +3,10 @@
 <form action="/{{oneItem._id}}/create-warranty" method="post">
 
 <h2>{{oneItem.name}}</h2>
+
+{{#each warranty}}
+{{provider}}
+{{/each}}
    
 <div>
     <label for="warrantyType">Warranty type</label>
@@ -24,5 +28,7 @@
     <label for="policyImg">warranty extra document</label>
     <input type="text" id="policyImg" name="policyImg">
 
-    <button id="create-warranty">Add a warranty</button>
+    <button id="create-warranty">Save new warranty</button>
 </form>
+
+<a href='/items/{{oneItem._id}}'>Close</a>

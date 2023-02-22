@@ -9,7 +9,9 @@ const warrantyExpirationDate = require('../public/js/expiration-date')
 router.get("/:itemId/create-warranty", async (req, res, next) => {
     try {
         const oneItem = await Item.findOne({ _id: req.params.itemId, owner: req.session.currentUser._id });
-        res.render("warranty/new-warranty", { oneItem });
+        const warranty = await Warranty.find({ product: oneItem._id })
+        console.log(warranty)
+        res.render("warranty/new-warranty", { oneItem, warranty });
     } catch (error) {
         next(error);
     }
@@ -20,7 +22,7 @@ router.post("/:itemId/create-warranty", async (req, res, next) => {
     try {
         await Warranty.create({ product: req.params.itemId, creator: req.session.currentUser._id, warrantyType, durationInMonths, provider, policyImg });
         // await warrantyExpirationDate(req.params.itemId)
-        res.redirect(`/items/${req.params.itemId}`);
+        res.redirect(`/${req.params.itemId}/create-warranty`);
     } catch (error) {
         next(error);
     }
