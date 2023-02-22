@@ -1,0 +1,29 @@
+<h2>New  warranty</h2>
+
+<form action="/warranty/create" method="post">
+
+    <label for="product">{{item.name}}</label>
+    <input type="text" id="product" name="product">
+
+<div>
+    <label for="warrantyType">Warranty type</label>
+    <select name='warrantyType' id='warrantyType'>
+      <option value='builder'>builder</option>
+      <option value='seller'>seller</option>
+      <option value='payment'>payment</option>
+      <option value='insurance'>insurance</option>
+    </select>
+  </div>
+    
+
+    <label for="durationInMonths">Warranty duration in months</label>
+    <input type="number"name="durationInMonths" id="durationInMonths" ></input>
+
+    <label for="provider">provider</label>
+    <input type="text" id="provider" name="provider">
+
+    <label for="policyImg">warranty extra document</label>
+    <input type="text" id="policyImg" name="policyImg">
+
+    <button id="create-warranty">Add a warranty</button>
+</form>
