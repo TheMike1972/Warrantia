@@ -71,7 +71,7 @@ router.get('/logout', (req, res, next) => {
       if (err) next(err);
       res.redirect('/login');
     });
-})
+npm })
 
 
 module.exports = router;
