@@ -12,6 +12,6 @@ router.use(isLoggedIn)
 
 router.use('/items', require('./items.routes'))
 router.use('/profile', require('./users.routes'))
-router.use('/', require('./warranties.routes'))
+router.use('/warranty', require('./warranties.routes'))
 
 module.exports = router;
