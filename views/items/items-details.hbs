@@ -7,10 +7,7 @@
     <p>{{name}}</p>
     <p>{{purchaseDate}}</p>
     <p>{{price}}</p>
-  
-
   {{/each}}
-  {{items._id}}
   <form action='/items/{{items._id}}/delete' method='post'>
     <button>Delete this product</button>
   </form>
