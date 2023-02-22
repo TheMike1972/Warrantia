@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Item = require('../models/Item.model');
+const Warranty = require('../models/Warranty.model');
 
 router.get('/', async (req, res, next) => {
     try {
@@ -42,7 +43,7 @@ router.get('/:itemId', async (req, res, next) => {
 
 router.get('/:itemId/edit', async (req, res, next) => {
     try {
-        const itemToUpdate = await Item.findOne({_id: req.params.itemId, owner: req.session.currentUser._id});
+        const itemToUpdate = await Item.findOne({ _id: req.params.itemId, owner: req.session.currentUser._id });
         res.render('items/edit-items', { itemToUpdate })
     } catch (error) {
         next(error)
@@ -53,7 +54,6 @@ router.post('/:itemId/edit', async (req, res, next) => {
     try {
         const { category, brand, name, purchaseDate, price, invoiceImg } = req.body;
         const updatedItem = await Item.findOneAndUpdate({ _id: req.params.itemId, owner: req.session.currentUser._id }, { category, brand, name, purchaseDate, price, invoiceImg });
-
         if (updatedItem) {
             res.redirect(`/items/${updatedItem.id}`);
         } else {

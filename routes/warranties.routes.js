@@ -40,10 +40,11 @@ router.get('/:id', async (req, res, next) => {
 
 // to modify warranty
 
-router.get("/:warrantyId/edit-warranty", async (req, res, next) => {
+router.get("/:itemId/edit-warranty", async (req, res, next) => {
     try {
-        const oneWarranty = await Warranty.findOne({ _id: req.params.warrantyId, creator: req.session.currentUser._id }).populate('product');
-        res.render('warranty/edit-warranty', { oneWarranty });
+        const warrantyToUpdate = await Warranty.find({ product: req.params.itemId, creator: req.session.currentUser._id })
+        console.log(warrantyToUpdate, 'fjlds')
+        res.render('warranty/edit-warranty', { warranties: warrantyToUpdate });
     } catch (error) {
         next(error);
     }
