@@ -1,6 +1,6 @@
 <h2>Edit product</h2>
 
-<form action='/item/{{item._id}}' method='post'>
+<form action='/items/{{item._id}}' method='post'>
   <input type='text' name='category' value='{{item.category}}' />
   <input type='text' name='brand' value='{{item.brand}}' />
   <input type='text' name='name' value='{{item.name}}' />
@@ -9,4 +9,6 @@
   
 
   <button>submit</button>
+  <a href='/warranty/{{warranty._id}}/edit'>Edit warranty</a>
+
 </form

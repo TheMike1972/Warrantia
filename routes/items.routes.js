@@ -34,11 +34,20 @@ router.get('/:itemId', async (req, res, next) => {
     console.log('in that route')
     try {
         const oneItem = await Item.findOne({ _id: req.params.itemId, owner: req.session.currentUser._id });
-        res.render('items/items-details', { oneItem });
+        res.render('items/items-details', { items: oneItem });
     } catch (error) {
         next(error)
     }
 });
+
+router.get('/:itemId/edit', async (req, res, next) => {
+    try {
+        const itemToUpdate = await Item.findOne({_id: req.params.itemId, owner: req.session.currentUser._id});
+        res.render('items/edit-items', { itemToUpdate })
+    } catch (error) {
+        next(error)
+    }
+})
 
 router.post('/:itemId/edit', async (req, res, next) => {
     try {
