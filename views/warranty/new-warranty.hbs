@@ -1,14 +1,14 @@
-<h2>New  warranty</h2>
+<h2>New warranty</h2>
 
-<form action="/{{oneItem._id}}/create-warranty" method="post">
+<form action="/warranty/{{oneItem._id}}/create-warranty" method="post">
 
-<h2>{{oneItem.name}}</h2>
+  <h2>{{oneItem.name}}</h2>
 
-{{#each warranty}}
-{{provider}}
-{{/each}}
-   
-<div>
+  {{#each warranty}}
+  {{provider}}
+  {{/each}}
+
+  <div>
     <label for="warrantyType">Warranty type</label>
     <select name='warrantyType' id='warrantyType'>
       <option value='builder'>builder</option>
@@ -17,18 +17,17 @@
       <option value='insurance'>insurance</option>
     </select>
   </div>
-    
 
-    <label for="durationInMonths">Warranty duration in months</label>
-    <input type="number"name="durationInMonths" id="durationInMonths" ></input>
+  <label for="durationInMonths">Warranty duration in months</label>
+  <input type="number" name="durationInMonths" id="durationInMonths"></input>
 
-    <label for="provider">provider</label>
-    <input type="text" id="provider" name="provider">
+  <label for="provider">provider</label>
+  <input type="text" id="provider" name="provider">
 
-    <label for="policyImg">warranty extra document</label>
-    <input type="text" id="policyImg" name="policyImg">
+  <label for="policyImg">warranty extra document</label>
+  <input type="text" id="policyImg" name="policyImg">
 
-    <button id="create-warranty">Save new warranty</button>
+  <button id="create-warranty">Save new warranty</button>
 </form>
 
 <a href='/items/{{oneItem._id}}'>Close</a>

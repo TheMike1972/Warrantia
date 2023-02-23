@@ -21,7 +21,7 @@ router.post("/:itemId/create-warranty", async (req, res, next) => {
     const { warrantyType, durationInMonths, provider, policyImg } = req.body;
     try {
         await Warranty.create({ product: req.params.itemId, creator: req.session.currentUser._id, warrantyType, durationInMonths, provider, policyImg });
-        res.redirect(`/${req.params.itemId}/create-warranty`);
+        res.redirect(`/warranty/${req.params.itemId}/create-warranty`);
     } catch (error) {
         next(error);
     }

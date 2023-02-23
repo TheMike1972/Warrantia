@@ -29,7 +29,7 @@ router.post('/create', async (req, res, next) => {
         const { category, brand, name, purchaseDate, price, invoiceImg } = req.body;
         const createdItem = await Item.create({ owner: req.session.currentUser._id, category, brand, name, purchaseDate, price, invoiceImg });
         // TODO redirect to warranties with the id of the created item
-        res.redirect(`/${createdItem._id}/create-warranty`);
+        res.redirect(`/warranty/${createdItem._id}/create-warranty`);
     } catch (error) {
         next(error)
     }
