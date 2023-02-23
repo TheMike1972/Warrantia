@@ -1,5 +1,13 @@
 <h2>My products</h2>
 
 {{#each allItems}}
-<div><a href="/items/{{_id}}">{{name}} - {{expirationDate}}</a></div>
+
+<a href="/items/{{_id}}">
+  <div class="item-box">
+      <p>{{category}}</p>
+      <p>{{brand}}</p>
+      <p>{{name}}</p>
+      <p>{{expirationDate}}</p>
+  </div>
+</a>
 {{/each}}
