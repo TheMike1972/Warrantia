@@ -1,5 +1,5 @@
 <h2>My products</h2>
 
 {{#each allItems}}
-<a href="/items/{{_id}}"><p>{{name}}</p></a>
+<div><a href="/items/{{_id}}">{{name}} - {{expirationDate}}</a></div>
 {{/each}}

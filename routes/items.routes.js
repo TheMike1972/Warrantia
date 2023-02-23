@@ -1,10 +1,15 @@
 const router = require('express').Router();
 const Item = require('../models/Item.model');
 const Warranty = require('../models/Warranty.model');
+const getExpiratonDate = require('../utils/expiration-date');
 
 router.get('/', async (req, res, next) => {
     try {
         const allItems = await Item.find({ owner: req.session.currentUser._id });
+
+        for (item of allItems) {
+            item.expirationDate = (await getExpiratonDate(item)).toLocaleDateString()
+        }
         res.render('items/items', { allItems });
     } catch (error) {
         next(error);
@@ -35,7 +40,9 @@ router.get('/:itemId', async (req, res, next) => {
     console.log('in that route')
     try {
         const oneItem = await Item.findOne({ _id: req.params.itemId, owner: req.session.currentUser._id });
-        console.log(oneItem)
+
+        oneItem.expirationDate = (await getExpiratonDate(oneItem)).toLocaleDateString()
+        oneItem._doc.purchaseDate = oneItem.purchaseDate.toLocaleDateString()
         res.render('items/items-details', { oneItem });
     } catch (error) {
         next(error)
