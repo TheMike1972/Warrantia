@@ -2,7 +2,7 @@ const router = require("express").Router();
 const User = require("../models/User.model");
 const Warranty = require("../models/Warranty.model");
 const Item = require("../models/Item.model");
-const warrantyExpirationDate = require('../public/js/expiration-date')
+
 
 // to create
 
@@ -21,7 +21,6 @@ router.post("/:itemId/create-warranty", async (req, res, next) => {
     const { warrantyType, durationInMonths, provider, policyImg } = req.body;
     try {
         await Warranty.create({ product: req.params.itemId, creator: req.session.currentUser._id, warrantyType, durationInMonths, provider, policyImg });
-        // await warrantyExpirationDate(req.params.itemId)
         res.redirect(`/${req.params.itemId}/create-warranty`);
     } catch (error) {
         next(error);
@@ -43,7 +42,7 @@ router.get('/:id', async (req, res, next) => {
 router.get("/:itemId/edit-warranty", async (req, res, next) => {
     try {
         const warrantyToUpdate = await Warranty.find({ product: req.params.itemId, creator: req.session.currentUser._id })
-        console.log(warrantyToUpdate, 'fjlds')
+
         res.render('warranty/edit-warranty', { warranties: warrantyToUpdate });
     } catch (error) {
         next(error);
@@ -53,7 +52,6 @@ router.get("/:itemId/edit-warranty", async (req, res, next) => {
 router.post("/:warrantyId/edit", async (req, res, next) => {
     try {
         const { warrantyType, durationInMonths, provider, policyImg } = req.body;
-
         const updatedItem = await Warranty.findOneAndUpdate({ _id: req.params.warrantyId, creator: req.session.currentUser._id }, { warrantyType, durationInMonths, provider, policyImg });
         res.redirect(`/items/${updatedItem.product._id}`);
     } catch (error) {
