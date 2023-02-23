@@ -1,25 +1,27 @@
-<h1>Warrantia</h1>
-
 {{#if errorMessage}}
 <p class='error'>{{errorMessage}}</p>
 {{/if}}
 
-<form action='/auth/login' method='post'>
+<div class="signup-container">
+  <h1>Warrantia</h1>
 
-  <div>
-    <label for='username'>Username: </label>
-    <input type='text' id='username' name='username' placeholder='Username:' />
-  </div>
-  <div>
-    <label for='password'>Password: </label>
-    <input type='password' required id='password' name='password' />
-  </div>
+  <form action='/auth/login' method='post'>
 
+    <div class="login-field">
+      <label for='username'>Username: </label>
+      <input type='text' id='username' name='username' placeholder='Username:' />
+    </div>
+    <div class="login-field">
+      <label for='password'>Password: </label>
+      <input type='password' required id='password' name='password' />
+    </div>
 
-  <button>Login</button>
+    <button>Login</button>
 
-  <p>Need an account? <a href='/auth/signup'>Sign up!</a></p>
+    <p class="have-account">Need an account? <a href='/auth/signup' class="login-link">Sign up!</a></p>
 
-</form>
+  </form>
 
-<p class="text-cover">Welcome to the app that manage your warranties!</p>
+  <p class="text-cover">Welcome to the app that manage your warranties!</p>
+
+</div>
