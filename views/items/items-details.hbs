@@ -1,14 +1,14 @@
 <h3>Product Details</h3>
-<div>
+<div class="product-details">
   <p><strong>Category:</strong> {{oneItem.category}}</p>
   <p><strong>Brand:</strong> {{oneItem.brand}}</p>
   <p><strong>Name:</strong> {{oneItem.name}}</p>
   <p><strong>Purchase Date:</strong> {{oneItem.purchaseDate}}</p>
   <p><strong>Price:</strong> {{oneItem.price}}</p>
-  <p><strong>Warranty duration</strong>{{oneItem.expirationDate}}</p>
+  <p><strong>Under warranty until:</strong> {{oneItem.expirationDate}}</p> 
   <form action='/items/{{oneItem._id}}/delete' method='post'>
     <button>Delete this product</button>
   </form>
-  <a href='/items/{{oneItem._id}}/edit'>Edit product</a>
-  <a href='/warranty/{{oneItem._id}}/edit-warranty'>Edit warranties</a>
+  <a href='/items/{{oneItem._id}}/edit' class="edit-link">Edit product</a>
+  <a href='/warranty/{{oneItem._id}}/edit-warranty' class="edit-link">Edit warranties</a>
 </div>
