@@ -40,7 +40,7 @@ a   {
   font-size: 1.3rem;
   font-weight: 700;
   text-decoration: none;
-  font-family: 'Comfortaa', cursive;
+  /* font-family: 'Comfortaa', cursive; */
 
 }
 
@@ -139,9 +139,9 @@ h1 {
   text-shadow: 2px 2px black;
 }
 
-.link-create-item {
+/* .link-create-item {
 
-}
+} */
 
 .items-container {
   display: flex;
@@ -196,7 +196,7 @@ h1 {
   form {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 20rem;
     margin: 2rem auto;
   }
   
@@ -212,6 +212,7 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-top: 0.5rem;
+    background-color: #f5f5f5;
   }
   
   button {
@@ -231,7 +232,7 @@ h1 {
   a {
     margin-top: 1rem;
     text-decoration: none;
-    color: #5da9fa;
+    color: #f5f5f5;
   }
   
   a:hover {
@@ -240,8 +241,6 @@ h1 {
   }
   
   a.edit-link {
-    background-color: #007bff;
-    color: #fff;
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 5px;
@@ -249,10 +248,12 @@ h1 {
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
+    background-color: #156eaa; 
+    color: rgb(242, 227, 227);
   }
   
   a.edit-link:hover {
-    background-color: #0062cc;
+    background-color: #53879e;
     color: #fff;
   }
 
@@ -273,7 +274,34 @@ h1 {
 
   .add-button {
     display: flex;
-
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+    justify-content: center;
   }
 
+  .delete-bttn {
+      background-color: #156eaa;
+      color: rgb(242, 227, 227);
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      margin: 2rem;
+      cursor: pointer;
+      width: 20rem;
+      align-self: center;
+  }
 
+  .delete-bttn:hover {
+    background-color: rgb(59, 40, 40);
+  }
+
+  .product-details p {
+    color: #f5f5f5;
+    padding-top: 0.6rem;
+    font-size: x-large;
+}
+  
