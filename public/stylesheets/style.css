@@ -22,6 +22,9 @@ body {
   width: 100%;
   background-color:#156eaa; 
   box-shadow: 0 5px 10px -5px black;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between; */
 }
 
 .nav {
@@ -42,6 +45,10 @@ a   {
 .nav a:visited   {
   color: rgb(242, 227, 227);
   text-decoration: none;
+}
+
+.logo {
+  width: 4.5rem;
 }
 
 .welcome-page {
@@ -67,7 +74,8 @@ h1 {
   font-size: 3rem;
   color: rgb(242, 227, 227);
   text-shadow: 2.5px 2.5px rgb(0, 0, 0);
-
+  width: 32rem;
+  text-align: center;
 }
 .items-container {
 display: flex;
