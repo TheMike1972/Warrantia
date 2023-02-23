@@ -1,7 +1,6 @@
 <h2>My products</h2>
-
 {{#each allItems}}
-
+<div class="items-container">
 <a href="/items/{{_id}}">
   <div class="item-box">
       <p>{{category}}</p>
@@ -11,3 +10,4 @@
   </div>
 </a>
 {{/each}}
+</div>
