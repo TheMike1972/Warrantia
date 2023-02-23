@@ -148,6 +148,7 @@ h1 {
 .item-box p {
   margin: 0.5em;
   color: #f5f5f5;
+}
 
   h2 {
     font-size: 2rem;
@@ -169,6 +170,7 @@ h1 {
   label {
     margin-top: 1rem;
     font-weight: bold;
+    color: #f5f5f5;
   }
   
   input {
@@ -228,7 +230,17 @@ h1 {
     justify-content: center;
     text-align: center;
     margin: 0 auto;
+    color: #f5f5f5;
+  }
+
+  .text-item-details {
+    align-items: flex-start;
   }
     
+
+  .add-button {
+    display: flex;
+
+  }
 
 
