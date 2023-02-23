@@ -1,18 +1,59 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;;
+}
+
 body {
-  padding: 50px;
+  /* padding: 50px; */
+  height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url("C:\Users\thoma\ironhack\project-2\Warrantia\public\images\arcode-acd-BKwECQ5MxM0-unsplash.jpg");
+  background-image: url("./../images/arcode-acd-BKwECQ5MxM0-unsplash.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
-a {
-  color: #00b7ff;
-}
 
 h1 {
-  color: 15px;
+  font-size: 5rem;
+  color: rgb(242, 227, 227);
+  text-shadow: 2.5px 2.5px rgb(0, 0, 0);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
 }
+
+
+.navbar {
+  height: 6rem;
+  width: 100%;
+  background-color:#156eaa; 
+  box-shadow: 0 5px 10px -5px black;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+  height: 100%;
+  padding-left: 3.5rem;
+}
+
+a   {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav a:visited   {
+  color: rgb(242, 227, 227);
+  text-decoration: none;
+}
+
 
 .item-box {
   border: 1px solid #ccc;

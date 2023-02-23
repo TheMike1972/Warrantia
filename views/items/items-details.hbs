@@ -5,10 +5,11 @@
   <p><strong>Name:</strong> {{oneItem.name}}</p>
   <p><strong>Purchase Date:</strong> {{oneItem.purchaseDate}}</p>
   <p><strong>Price:</strong> {{oneItem.price}}</p>
-  <p><strong>Under warranty until:</strong> {{oneItem.expirationDate}}</p> 
+  <p><strong>Under warranty until:</strong> {{oneItem.expirationDate}}</p>
   <form action='/items/{{oneItem._id}}/delete' method='post'>
     <button>Delete this product</button>
   </form>
+  <a href='/warranty/{{oneItem._id}}/create-warranty' class="edit-link">Add a warranty</a>
   <a href='/items/{{oneItem._id}}/edit' class="edit-link">Edit product</a>
   <a href='/warranty/{{oneItem._id}}/edit-warranty' class="edit-link">Edit warranties</a>
 </div>
