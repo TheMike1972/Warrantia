@@ -110,6 +110,39 @@ h1 {
   padding-left: 1rem;
 }
 
+.login-field {
+  align-self: center;
+  color: rgb(242, 227, 227);
+  font-size: 1.4rem;
+}
+
+.profile-container {
+  display: flex;
+  margin: 2rem;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 0.5rem;
+}
+
+.title {
+  color: rgb(242, 227, 227);
+  font-size: 2.5rem;
+  text-shadow: 1px 1 px black;
+  font-family: 'Comfortaa', cursive;
+}
+
+.username {
+  font-size: 4rem;
+  color: rgb(242, 227, 227);
+  text-shadow: 2px 2px black;
+}
+
+.link-create-item {
+
+}
+
 .items-container {
   display: flex;
   flex-wrap: wrap;
@@ -198,7 +231,7 @@ h1 {
   a {
     margin-top: 1rem;
     text-decoration: none;
-    color: #007bff;
+    color: #5da9fa;
   }
   
   a:hover {
