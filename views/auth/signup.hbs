@@ -1,26 +1,32 @@
-<h1>Warrantia</h1>
-<p>Welcome to the app that manage your warranties!</p>
-
 {{#if errorMessage}}
 <p class='error'>{{errorMessage}}</p>
 {{/if}}
 
-<form action='/auth/signup' method='post'>
+<div class="signup-container">
+  <h1>Warrantia</h1>
 
-  <div>
-    <label for='username'>Username: </label>
-    <input type='text' id='username' name='username' placeholder='Username:' />
-  </div>
-  <div>
-    <label for='password'>Password: </label>
-    <input type='password' required id='password' name='password' />
-  </div>
-  <div>
-    <label for='email'>Email: </label>
-    <input type='email' id='email' name='email' />
-  </div>
+  <form action='/auth/signup' method='post'>
 
-  <button>Sign up</button>
+    <div class="info-sign-container">
+      <div>
+        <label for='username'>Username: </label>
+        <input type='text' id='username' name='username' placeholder='Username:' />
+      </div>
+      <div>
+        <label for='password'>Password: </label>
+        <input type='password' required id='password' name='password' />
+      </div>
+      <div>
+        <label for='email'>Email: </label>
+        <input type='email' id='email' name='email' />
+      </div>
+    </div>
 
-  <p>Already have an account? <a href='/auth/login'>Login</a></p>
-</form>
+    <button>Sign up</button>
+
+    <p class="have-account">Already have an account? <a class="login-link" href='/auth/login'>Login</a></p>
+  </form>
+
+  <p class="text-cover">Welcome to the app that manage your warranties!</p>
+
+</div>
