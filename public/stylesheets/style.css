@@ -138,10 +138,10 @@ h1 {
   color: rgb(242, 227, 227);
   text-shadow: 2px 2px black;
 }
-
+/* 
 .link-create-item {
 
-}
+} */
 
 .items-container {
   display: flex;
