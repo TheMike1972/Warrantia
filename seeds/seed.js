@@ -1,4 +1,4 @@
-// import les 3 fichiers json : const users = require(user.json)etc
+// import the 3 json files : const users = require(user.json)etc
 // require mongoose etc
 
 const mongoose = require('mongoose')
@@ -20,14 +20,11 @@ mongoose
     .then(async (x) => {
         try {
             const dbName = x.connections[0].name
-            console.log(`Connected to Mongo! Database name: "${dbName}"`)
-            // On appelle nos trois fonctions de seed (await seedUser()) dans l'ordre où on les veut
             await seedUsers()
             await seedItems()
             await seedWarranties()
 
             await mongoose.disconnect()
-            console.log('Disconnected after creating users')
         } catch (error) {
             console.error(error)
         }
@@ -48,7 +45,6 @@ async function seedUsers() {
 async function seedItems() {
     try {
         await Item.deleteMany()
-        // for (const el of array)
         for (const item of items) {
             const user = await User.findOne({ username: item.owner })
             item.owner = user._id;
@@ -64,7 +60,6 @@ async function seedWarranties() {
         await Warranty.deleteMany()
         for (const warranty of warranties) {
             const item = await Item.findOne({ name: warranty.product })
-            console.log(warranty.product)
             warranty.product = item._id;
             const user = await User.findOne({ username: warranty.creator })
             warranty.creator = user._id;
@@ -74,13 +69,3 @@ async function seedWarranties() {
         console.log(error);
     }
 }
-
-
-
-
-
-    // async function seedUser(), item, warranty
-
-    // seeduser : normal
-    // seedItem : on retrouve le user rattaché à l'item pour récupérer son objectID
-    // seedWarranties : même topo

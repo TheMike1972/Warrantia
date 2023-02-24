@@ -7,7 +7,6 @@
 }
 
 body {
-  /* padding: 50px; */
   height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url("./../images/arcode-acd-BKwECQ5MxM0-unsplash.jpg");
@@ -22,9 +21,6 @@ body {
   width: 100%;
   background-color:#156eaa; 
   box-shadow: 0 5px 10px -5px black;
-  /* display: flex;
-  flex-direction: row;
-  justify-content: space-between; */
 }
 
 .nav {
@@ -40,14 +36,11 @@ a   {
   font-size: 1.3rem;
   font-weight: 700;
   text-decoration: none;
-  /* font-family: 'Comfortaa', cursive; */
-
 }
 
 .nav a:visited   {
   color: rgb(242, 227, 227);
   text-decoration: none;
-
 }
 
 .logo {
@@ -69,7 +62,6 @@ h1 {
   display: flex;
   justify-content: center;
   font-family: 'Comfortaa', cursive;
-  /* align-items: center; */
 }
 
 .text-cover {
@@ -139,10 +131,6 @@ h1 {
   text-shadow: 2px 2px black;
 }
 
-/* .link-create-item {
-
-} */
-
 .items-container {
   display: flex;
   flex-wrap: wrap;
@@ -164,8 +152,6 @@ h1 {
 }
 
 .item-box:hover {
-  /* background-color: #f5f5f5; */
-  /* backdrop-filter: blur(10px); */
   backdrop-filter: blur(5px) sepia(90%);
   color:#333;
 }
@@ -183,155 +169,154 @@ h1 {
   color: #f5f5f5;
 }
 
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    margin-left: 4rem;
-    margin-top: 2rem;
-    color: #f5f5f5;
-    font-family: 'Comfortaa', cursive;
-
-  }
-
-  .add-warranty {
-    width: 30rem;
-    align-self: flex-end;
-    line-height: 4rem;
-  }
-
-  span {
-    text-decoration: underline;
-    color: #f5f5f5;
-    font-family: 'Comfortaa', cursive;
-  }
-
-  .existing-warranties {
-    color: rgb(242, 227, 227);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    line-height: 1.5rem;
-    font-weight: 600;
-    font-style: italic;
-  }
-
-  .warranty-provider {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 20rem;
-    margin: 2rem auto;
-  }
-  
-  label {
-    margin-top: 1rem;
-    font-weight: bold;
-    color: #f5f5f5;
-  }
-  
-  input {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 0.5rem;
-    background-color: #f5f5f5;
-  }
-  
-  button {
-    background-color: #156eaa;
-    color: rgb(242, 227, 227);
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 5px;
-    margin: 2rem;
-    cursor: pointer;
-    width: 20rem;
-    align-self: center;
-  }
-  
-  a {
-    margin-top: 1rem;
-    text-decoration: none;
-    color: #f5f5f5;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-    color: #f5f5f5;
-  }
-  
-  a.edit-link {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    margin-top: 1rem;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    background-color: #156eaa; 
-    color: rgb(242, 227, 227);
-  }
-  
-  a.edit-link:hover {
-    background-color: #53879e;
-    color: #fff;
-  }
-
-  .product-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 0 auto;
-    color: #f5f5f5;
-  }
-
-  .text-item-details {
-    align-items: flex-start;
-  }
-    
-
-  .add-button {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 2rem;
-    gap: 1rem;
-    justify-content: center;
-  }
-
-  .delete-bttn {
-      background-color: #156eaa;
-      color: rgb(242, 227, 227);
-      font-size: 1.2rem;
-      font-weight: 600;
-      padding: 0.5rem;
-      border: none;
-      border-radius: 5px;
-      margin: 2rem;
-      cursor: pointer;
-      width: 20rem;
-      align-self: center;
-  }
-
-  .delete-bttn:hover {
-    background-color: rgb(59, 40, 40);
-  }
-
-  .product-details p {
-    color: #f5f5f5;
-    padding-top: 0.6rem;
-    font-size: x-large;
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  margin-left: 4rem;
+  margin-top: 2rem;
+  color: #f5f5f5;
+  font-family: 'Comfortaa', cursive;
 }
-  
+
+.add-warranty {
+  width: 30rem;
+  align-self: flex-end;
+  line-height: 4rem;
+}
+
+span {
+  text-decoration: underline;
+  color: #f5f5f5;
+  font-family: 'Comfortaa', cursive;
+}
+
+.existing-warranties {
+  color: rgb(242, 227, 227);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.5rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.warranty-provider {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  margin: 2rem auto;
+}
+
+label {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #f5f5f5;
+}
+
+input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  background-color: #f5f5f5;
+}
+
+button {
+  background-color: #156eaa;
+  color: rgb(242, 227, 227);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  margin: 2rem;
+  cursor: pointer;
+  width: 20rem;
+  align-self: center;
+}
+
+a {
+  margin-top: 1rem;
+  text-decoration: none;
+  color: #f5f5f5;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #f5f5f5;
+}
+
+a.edit-link {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #156eaa; 
+  color: rgb(242, 227, 227);
+}
+
+a.edit-link:hover {
+  background-color: #53879e;
+  color: #fff;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  color: #f5f5f5;
+}
+
+.text-item-details {
+  align-items: flex-start;
+}
+
+
+.add-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.delete-bttn {
+  background-color: #156eaa;
+  color: rgb(242, 227, 227);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  margin: 2rem;
+  cursor: pointer;
+  width: 20rem;
+  align-self: center;
+}
+
+.delete-bttn:hover {
+  background-color: rgb(59, 40, 40);
+}
+
+.product-details p {
+  color: #f5f5f5;
+  padding-top: 0.6rem;
+  font-size: x-large;
+}
+
 .close-link {
   margin-left: 5rem;
   text-decoration: underline;

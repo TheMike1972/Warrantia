@@ -6,10 +6,7 @@ const User = require('../models/User.model');
 const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard')
 
 
-// router.get('/signup', (req, res, next) => res.render('auth/signup'));
-
 router.post('/signup', (req, res, next) => {
-
   const { username, email, password } = req.body;
 
   bcryptjs
@@ -23,7 +20,6 @@ router.post('/signup', (req, res, next) => {
       });
     })
     .then(userFromDB => {
-      console.log('Newly created user is: ', userFromDB);
       res.redirect('/auth/login');
     })
     .catch(error => next(error));
@@ -46,12 +42,10 @@ router.post('/login', (req, res, next) => {
 
   User.findOne({ username })
     .then(user => {
-      console.log('user found: ', user)
       if (!user) {
         res.render('auth/login', { errorMessage: 'username is not registered. Try with other username.' });
         return;
       } else if (bcryptjs.compareSync(password, user.password)) {
-        console.log('success')
         req.session.currentUser = user
         res.redirect('/profile')
       } else {
