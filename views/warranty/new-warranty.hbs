@@ -32,9 +32,11 @@
 </form>
 
 <div class="existing-warranties">
-  <p>EXISTING WARRANTIES</p>
+  <p>EXISTING WARRANTIES :</p>
   {{#each warranty}}
-  {{provider}}
+  <div class="warranty-provider">
+    {{provider}}
+  </div>
   {{/each}}
 </div>
 
