@@ -1,13 +1,18 @@
+{{#if errorMessage}}
+<p class='error'>{{errorMessage}}</p>
+{{/if}}
+
 <h2>My products</h2>
 <div class="items-container">
-{{#each allItems}}
-<a href="/items/{{_id}}">
-  <div class="item-box">
+  {{#each allItems}}
+  <a href="/items/{{_id}}">
+    <div class="item-box">
       <p>{{category}}</p>
       <p>{{brand}}</p>
       <p>{{name}}</p>
-      <p>Warranty until:</p><p> {{expirationDate}}</p>
-  </div>
-</a>
-{{/each}}
+      <p>Warranty until:</p>
+      <p> {{expirationDate}}</p>
+    </div>
+  </a>
+  {{/each}}
 </div>

@@ -1,12 +1,13 @@
+{{#if errorMessage}}
+<p class='error'>{{errorMessage}}</p>
+{{/if}}
+
 <h2>New warranty</h2>
 
 <form action="/warranty/{{oneItem._id}}/create-warranty" method="post">
 
-  <h2>{{oneItem.name}}</h2>
+  <h2 class="add-warranty">ADD WARRANTY TO: <span>{{oneItem.name}}</span></h2>
 
-  {{#each warranty}}
-  {{provider}}
-  {{/each}}
 
   <div>
     <label for="warrantyType">Warranty type</label>
@@ -30,4 +31,11 @@
   <button id="create-warranty">Save new warranty</button>
 </form>
 
-<a href='/items/{{oneItem._id}}'>Close</a>
+<div class="existing-warranties">
+  <p>EXISTING WARRANTIES</p>
+  {{#each warranty}}
+  {{provider}}
+  {{/each}}
+</div>
+
+<a href='/items/{{oneItem._id}}' class="close-link">Close</a>
