@@ -1,4 +1,8 @@
-<h2>Add a new  product</h2>
+{{#if errorMessage}}
+<p class='error'>{{errorMessage}}</p>
+{{/if}}
+
+<h2>Add a new product</h2>
 <form action="/items/create" method="post">
 
     <label for="category">Category</label>
@@ -15,7 +19,7 @@
 
     <label for="price">Purchase price</label>
     <input type="number" min="0" id="price" name="price">
-  
+
 
 
     <button>Submit</button>

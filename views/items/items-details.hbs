@@ -1,20 +1,24 @@
+{{#if errorMessage}}
+<p class='error'>{{errorMessage}}</p>
+{{/if}}
+
 <h2>Product details</h2>
 <article class="text-item-details">
-<div class="product-details">
-  <p><strong>Category:</strong> {{oneItem.category}}</p>
-  <p><strong>Brand:</strong> {{oneItem.brand}}</p>
-  <p><strong>Name:</strong> {{oneItem.name}}</p>
-  <p><strong>Purchase Date:</strong> {{oneItem.purchaseDate}}</p>
-  <p><strong>Price:</strong> {{oneItem.price}}</p>
-  <p><strong>Under warranty until:</strong> {{oneItem.expirationDate}}</p>
+  <div class="product-details">
+    <p><strong>Category:</strong> {{oneItem.category}}</p>
+    <p><strong>Brand:</strong> {{oneItem.brand}}</p>
+    <p><strong>Name:</strong> {{oneItem.name}}</p>
+    <p><strong>Purchase Date:</strong> {{oneItem.purchaseDate}}</p>
+    <p><strong>Price:</strong> {{oneItem.price}}</p>
+    <p><strong>Under warranty until:</strong> {{oneItem.expirationDate}}</p>
   </div>
 </article>
-  <div class="add-button">
+<div class="add-button">
   <a href='/warranty/{{oneItem._id}}/create-warranty' class="edit-link">Add a warranty</a>
   <a href='/items/{{oneItem._id}}/edit' class="edit-link">Edit product</a>
   <a href='/warranty/{{oneItem._id}}/edit-warranty' class="edit-link">Edit warranties</a>
-  </div>
-  <form action='/items/{{oneItem._id}}/delete' method='post'>
-    <button class="delete-bttn">Delete this product</button>
-  </form>
+</div>
+<form action='/items/{{oneItem._id}}/delete' method='post'>
+  <button class="delete-bttn">Delete this product</button>
+</form>
 </div>

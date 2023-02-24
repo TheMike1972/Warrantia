@@ -64,7 +64,7 @@ router.post("/:warrantyId/edit", async (req, res, next) => {
 router.post('/:warrantyId/delete', async (req, res, next) => {
     try {
         await Warranty.findOneAndDelete({ _id: req.params.warrantyId, creator: req.session.currentUser._id })
-        res.render('items')
+        res.render('items/items')
     } catch (error) {
         next(error)
     }
