@@ -3,7 +3,7 @@
 
 const mongoose = require('mongoose')
 const MONGO_URI =
-    process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/project-2'
+    'mongodb+srv://AlHitch:YAhSPu3XwTas9PTh@cluster0.tlwwns0.mongodb.net/warrantia?retryWrites=true&w=majority'
 
 const users = require('./user.json')
 const items = require('./item.json')
@@ -66,6 +66,8 @@ async function seedWarranties() {
             const item = await Item.findOne({ name: warranty.product })
             console.log(warranty.product)
             warranty.product = item._id;
+            const user = await User.findOne({ username: warranty.creator })
+            warranty.creator = user._id;
         }
         await Warranty.create(warranties)
     } catch (error) {

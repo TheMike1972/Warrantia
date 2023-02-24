@@ -1,95 +1,111 @@
 [
     {
+       "creator": "John",
        "product": "iPhone10",
        "warrantyType": "builder",
        "durationInMonths": 24,
        "provider": "Apple"
     },
     {
+        "creator": "John",
         "product": "iPhone10",
         "warrantyType": "seller",
         "durationInMonths": 24,
         "provider": "Darty"
     },
-{
+    {
+        "creator": "John",
         "product": "powershot50 G5X mark2",
         "warrantyType": "builder",
         "durationInMonths": 12,
         "provider": "Canon"
     },
     {
+        "creator": "John",
         "product": "powershot50 G5X mark2",
         "warrantyType": "payment",
         "durationInMonths": 12,
         "provider": "Visa"
     },
     {
+        "creator": "Marcel",
         "product": "WAN 28228 FF",
         "warrantyType": "builder",
         "durationInMonths": 48,
         "provider": "Bosch"
     },
     {
+        "creator": "Marcel",
         "product": "WAN 28228 FF",
         "warrantyType": "insurance",
         "durationInMonths": 36,
         "provider": "MAIF"
     },
     {
+        "creator": "Marcel",
         "product": "Nespresso Inissia",
         "warrantyType": "builder",
         "durationInMonths": 12,
         "provider": "Krups"
     },
     {
+        "creator": "Marcel",
         "product": "Nespresso Inissia",
         "warrantyType": "seller",
         "durationInMonths": 24,
         "provider": "Amazon"
     },
     {
+        "creator": "Robert",
         "product": "CXC",
         "warrantyType": "builder",
         "durationInMonths": 24,
         "provider": "Cambridge"
     },
     {
+        "creator": "Robert",
         "product": "CXC",
         "warrantyType": "payment",
         "durationInMonths": 12,
         "provider": "American Express"
     },
     {
+        "creator": "Robert",
         "product": "BEH850KA32-QS",
         "warrantyType": "builder",
         "durationInMonths": 12,
         "provider": "Black&Decker"
     },
     {
+        "creator": "Robert",
         "product": "BEH850KA32-QS",
         "warrantyType": "seller",
         "durationInMonths": 24,
         "provider": "Leroy Merlin"
     },
     {
+        "creator": "Marie",
         "product": "ST841E",
         "warrantyType": "builder",
         "durationInMonths": 6,
         "provider": "Babyliss"
     },
     {
+        "creator": "Marie",
         "product": "ST841E",
         "warrantyType": "seller",
         "durationInMonths": 6,
         "provider": "Monoprix"
     },
     {
+        "creator": "Marie",
         "product": "Xtreme2",
         "warrantyType": "seller",
         "durationInMonths": 6,
         "provider": "Cashexpress"
     },
     {
+        "creator": "Marie",
         "product": "Xtreme2",
         "warrantyType": "payment",
         "durationInMonths": 12,
