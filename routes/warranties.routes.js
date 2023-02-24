@@ -10,7 +10,6 @@ router.get("/:itemId/create-warranty", async (req, res, next) => {
     try {
         const oneItem = await Item.findOne({ _id: req.params.itemId, owner: req.session.currentUser._id });
         const warranty = await Warranty.find({ product: oneItem._id })
-        console.log(warranty)
         res.render("warranty/new-warranty", { oneItem, warranty });
     } catch (error) {
         next(error);
@@ -42,7 +41,6 @@ router.get('/:id', async (req, res, next) => {
 router.get("/:itemId/edit-warranty", async (req, res, next) => {
     try {
         const warrantyToUpdate = await Warranty.find({ product: req.params.itemId, creator: req.session.currentUser._id })
-
         res.render('warranty/edit-warranty', { warranties: warrantyToUpdate });
     } catch (error) {
         next(error);
